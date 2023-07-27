@@ -49,7 +49,7 @@ THEN it should maintain data integrity, even after the page is refreshed or relo
 * If you encounter any issues or have suggestions, feel free to provide feedback or contribute to the project by submitting a pull request.
 
 ## Resources 
-* [React Basics - Treehouse Coding](https://teamtreehouse.com/)
+* [React Components - Treehouse Coding](https://teamtreehouse.com/)
 
 ## Contributing 
 Janelle Phalon - [Github](https://github.com/janellephalon)
