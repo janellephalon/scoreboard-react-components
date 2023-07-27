@@ -38,8 +38,8 @@ THEN it should maintain data integrity, even after the page is refreshed or relo
 
 ## Installation 
 * `git clone` 
-* After cloning, navigate to the project directory.
-* Open the HTML file in your preferred web browser.
+* `npm install`
+* `npm start`
 
 ## Usage 
 * Once you have opened the HTML file in your web browser, the project interface will be displayed.

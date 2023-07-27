@@ -1,24 +1,37 @@
 import React, {memo} from 'react';
 import Counter from './Counter';
+import PropTypes from 'prop-types';
 
-const Player = (props) => {
+import Icon from './Icon'
+
+const Player = ({name, score, id, removePlayer, changeScore, isHighScore}) => {
 
   return (
     <div className="player">
       <span className="player-name">
-        <button className="remove-player" onClick={() => props.removePlayer(props.id)}>✖</button>
-        {props.name}
+        <button className="remove-player" onClick={() => removePlayer(id)}>✖</button>
+        <Icon isHighScore={isHighScore}/>
+        {name}
       </span>
 
-      <Counter score={props.score}
-      changeScore={props.changeScore}
-      id={props.id}/>
+      <Counter score={score}
+      changeScore={changeScore}
+      id={id}/>
     </div>
   );
 }
 
+Player.propTypes = {
+  name: PropTypes.string.isRequired,
+  score: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
+  removePlayer: PropTypes.func.isRequired,
+  changeScore: PropTypes.func.isRequired,
+  isHighScore: PropTypes.bool.isRequired
+}
+
 const playerPropsAreEqual = (prevProps, nextProps) => {
-  return prevProps.score === nextProps.score;
+  return prevProps.score === nextProps.score && prevProps.isHighScore === nextProps.isHighScore;
 }
 
 export default memo(Player, playerPropsAreEqual);
