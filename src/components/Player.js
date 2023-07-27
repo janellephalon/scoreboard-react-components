@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import Counter from './Counter';
 
 const Player = (props) => {
@@ -17,4 +17,8 @@ const Player = (props) => {
   );
 }
 
-export default Player;
+const playerPropsAreEqual = (prevProps, nextProps) => {
+  return prevProps.score === nextProps.score;
+}
+
+export default memo(Player, playerPropsAreEqual);
